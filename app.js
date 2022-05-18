@@ -3,7 +3,7 @@ function sent(toSent){
 
     var push = require('web-push')
 
-    var key = push.generateVAPIDKeys();
+    // var key = push.generateVAPIDKeys();
 
     var VAPIDKeys = {
         publicKey: 'BFYw_Pb5y4ha8-H8r3NJoa33xwRuGBetzTHkrk02p_1z4hWRhP7mAdZCh002mt2XAnVq98DlknuFaFOxaYnqRWo',
@@ -14,7 +14,7 @@ function sent(toSent){
 
     let sub = {"keys": {"auth": "dyipHN-Y7Qr9QRGKHvbfsQ", "p256dh": "BC6FM5AQSE2Rgtw5PZ58v9ESRpA9ai4yPBta85_Z-RsTs-WdkWA4Jkjohvi-F85fkLM7M2OPzXzC87PDRvgwMSs"}, "endpoint": "https://fcm.googleapis.com/fcm/send/dHg-LyLW2L8:APA91bEvwXkhpBajRJ_twzZTeLX-7Qqu8L3GuCbFpxRn3o9SoWAf1rxxPQzE0Bx4sdaDknOO2K8mmcFiGwA9_hWxjt5WKkeqojSOuPTJubYfpZ3co6zj0Vb2x-tZMK7Oud8JIqUw8cuS", "expirationTime": null}
     console.log(toSent)
-    
+     
     push.sendNotification(toSent ,'test message')   
     
 }
@@ -64,24 +64,16 @@ try {
 const express = require('express')
 const router = express.Router()
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
-function hey(){
-    let a = []
-    for (let i = 0; i < 10; i++) {
-        a.push(i)
-    }
-    return a;
-}
+
 app.get('/',(req,res) =>{
     res.send(JSON.stringify(triger()))
 })
-// router.route('/hello').get((req,res)=>{
-//     res.sent(triger())
-// })
+
 
 
 
